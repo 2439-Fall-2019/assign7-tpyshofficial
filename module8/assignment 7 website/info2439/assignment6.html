@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Boilerplate</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="cordova.js"></script>
+
+
+
+</head>
+<body>
+<div data-role="page" id="first">
+<div data-role="header">
+	<h1>Assignment 6</h1>
+</div>
+<div role="main" class="ui-content">
+	<ul id="assignmentlist" data-role="listview" data-inset="true">
+		<li>Test 3</li>
+		<li>Test 4</li>
+	</ul>
+	
+	<form>
+	<div data-role="fieldcontain">
+	<label for="additem">New Item</label>
+	<input type="text" name="additem" id="additem" value="" />
+	</div>
+	
+	<div data-role="fieldcontain">
+	<label for="itemaddress">Item Address</label>
+	<input type="text" name="itemaddress" id="itemaddress" value="" />
+	<input type="button" id="testBtn" value="Add It">
+	</form>
+</div>
+	</div>
+</div>
+<script>
+$("#testBtn").click(function() { 
+   var itemToAdd = $.trim($("#additem").val());
+   if(itemToAdd == "") return;    
+   var addressToAdd = $.trim($("#itemaddress").val());
+   if(addressToAdd == "") return;
+   $("#assignmentlist").append("<li>"+itemToAdd+" " + addressToAdd +"</li>");    
+   $("#assignmentlist").listview("refresh");  
+   }); 
+</script>
+<!-- Ted Pysh
+	index.html
+	info2439
+	Thoendel
+	9/8/19 
+	-->
+
+</body>
+
+</html>
